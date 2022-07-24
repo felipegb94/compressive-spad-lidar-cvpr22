@@ -64,11 +64,13 @@ The data will be download inside the `./data` folder. If you want to change the 
 
 You can run the `eval_coding_flash_lidar_scene_batch.sh` script. In the script you can modify the desired `sbr`, `nphotons` (photon counts), `K`, to use in the simulation. You can also comment in and out the blocks of code that will simulate different coding schemes. The results will be saved under `results/results_data/eval_coding_flash_lidar`. Running the script for all coding schemes may take a few minutes.
 
+To visualize the results you can use the script `plotting_scripts/plot_flash_lidar_sim_results.py`. Make sure the parameters here are set to the same simulation parameters when you ran `eval_coding_flash_lidar_scene_batch.sh`. 
+
 To perform individual flash illumination simulations you can run the `eval_coding_flash_lidar_scene.py` script with the specified parameters. Some sample run commands are at the top of the scipt.
 
 ## Reproducing Scan Data Results with the Real-world captured Data
 
-You can run the `scan_data_scripts/process_hist_img.py` script. Please refer to that file for a description of what the script is doing.
+You can run the `scan_data_scripts/process_hist_img.py` script. Please refer to file file for a description of what the script is doing.
 
 ## Reproducing Simulated Isometric Compression Results and Mean Absolute Error Results
 

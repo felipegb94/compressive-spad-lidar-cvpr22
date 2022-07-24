@@ -207,4 +207,3 @@ if __name__=='__main__':
 		# plot_utils.set_cbar(img, cbar_orientation='horizontal')
 		plot_utils.save_currfig(dirpath=out_base_dirpath, filename=scene_id+'_depths', file_ext='svg')
 
-	plt.show()

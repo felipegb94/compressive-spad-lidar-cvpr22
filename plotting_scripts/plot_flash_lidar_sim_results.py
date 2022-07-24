@@ -1,5 +1,12 @@
 '''
-	plots isometric contours of a given coding approach with respect to the ideal setting where you have the full histogram available
+	plots the depths and depth error images for the lidar sim results
+	Make sure you have run `eval_coding_flash_lidar_scene_batch.sh` with the correct parameters before running this script
+	When running this script you need to set the following parameters to match what you have simulated with the eval_coding_flash_lidar_scene script:
+	- sbr: set to sbr that has been simulated
+	- n_photons: set to n_photons htat have been simulated
+	- scene_id: set to 'kitchen-2' or 'bathroom-cycles-2'
+	- n_codes_all: set to the n_codes (i.e., K) that have been simulated
+
 '''
 ## Standard Library Imports
 import os
@@ -81,7 +88,7 @@ if __name__=='__main__':
 	directonly=False
 	scene_fname = get_scene_fname(scene_id=scene_id, n_rows=n_rows, n_cols=n_cols, n_tbins=n_tbins, directonly=directonly, view_id=view_id)
 	## Get the dirpath where the results are stored
-	results_data_dirpath = os.path.join(io_dirpaths['results_data'], 'eval_coding_flash_lidar/'+scene_fname+'/'+sim_params_str)
+	results_data_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['results_data'], 'eval_coding_flash_lidar/'+scene_fname+'/'+sim_params_str)
 	out_dirpath = os.path.join(out_base_dirpath, 'eval_coding_flash_lidar/'+scene_fname+'/'+sim_params_str)
 
 	# Load dirpaths and correct them depending on the ntbins input
@@ -109,11 +116,7 @@ if __name__=='__main__':
 
 	## Set coding schemes we want to plot
 	account_irf = True
-	n_codes_all = [10, 20, 40, 80]
-	n_codes_all = [20, 40, 80]
-	n_codes_all = [3, 8, 10]
-	n_codes_all = [4, 8, 16]
-	n_codes_all = [8]
+	n_codes_all = [20, 40]
 	pw_factor_shared = 1.0
 	coding_ids = ['PSeriesFourier','TruncatedFourier','PSeriesGray','Gated','GatedWide']
 	coding_ids = ['PSeriesFourier','TruncatedFourier','PSeriesGray', 'Gated']
