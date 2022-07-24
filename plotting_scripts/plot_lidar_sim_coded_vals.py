@@ -73,7 +73,7 @@ if __name__=='__main__':
 
 	io_dirpaths = io_ops.load_json('./io_dirpaths.json')
 	plot_params = io_ops.load_json('./plotting_scripts/plot_params.json')
-	out_base_dirpath = io_dirpaths['paper_results_dirpath']
+	out_base_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['paper_results_dirpath'])
 	if(plot_params['dark_mode']):
 		plt.style.use('dark_background')
 		out_base_dirpath += '_dark'
@@ -98,9 +98,9 @@ if __name__=='__main__':
 	out_dirpath = os.path.join(out_base_dirpath, 'eval_coding_flash_lidar/'+scene_fname+'/'+sim_params_str)
 
 	# Load dirpaths and correct them depending on the ntbins input
-	transient_images_dirpath = io_dirpaths['transient_images_dirpath']
-	rgb_images_dirpath = io_dirpaths['rgb_images_dirpath']
-	depth_images_dirpath = io_dirpaths['depth_images_dirpath']
+	transient_images_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['transient_images_dirpath'])
+	rgb_images_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['rgb_images_dirpath'])
+	depth_images_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['depth_images_dirpath'])
 	# check that ntbins match
 	dirpath_ntbins = int(transient_images_dirpath.split('_')[-1].split('-')[-1])
 	assert(dirpath_ntbins == n_tbins), 'make sure ntbins of images used matches input ntbins'

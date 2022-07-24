@@ -25,7 +25,7 @@ from scan_data_scripts.scan_data_utils import get_irf, get_scene_irf
 if __name__=='__main__':
 	io_dirpaths = io_ops.load_json('./io_dirpaths.json')
 	plot_params = io_ops.load_json('./plotting_scripts/plot_params.json')
-	out_base_dirpath = io_dirpaths['paper_results_dirpath']
+	out_base_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['paper_results_dirpath'])
 	if(plot_params['dark_mode']):
 		plt.style.use('dark_background')
 		out_base_dirpath += '_dark'

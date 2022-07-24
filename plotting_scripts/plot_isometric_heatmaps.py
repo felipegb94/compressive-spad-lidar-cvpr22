@@ -93,8 +93,9 @@ def plot_isometric_heatmap(data, target_data, metric_id='mae', ax=None):
 if __name__=='__main__':
 	io_dirpaths = io_ops.load_json('./io_dirpaths.json')
 	plot_params = io_ops.load_json('./plotting_scripts/plot_params.json')
-	out_base_dirpath = io_dirpaths['paper_results_dirpath']
-	base_dirpath = io_dirpaths['results_data']
+	out_base_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['paper_results_dirpath'])
+	base_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['results_data'])
+
 	if(plot_params['dark_mode']):
 		plt.style.use('dark_background')
 		out_base_dirpath += '_dark'

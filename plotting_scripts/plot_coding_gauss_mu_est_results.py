@@ -81,7 +81,8 @@ if __name__=='__main__':
 	# Get dirpath from params
 	from eval_coding_gauss_mu_est import get_out_rel_dirpath
 	rel_dirpath = get_out_rel_dirpath(n_tbins, min_max_sbr_levels, min_max_photons_levels)
-	in_dirpath = os.path.join(io_dirpaths['results_data'], rel_dirpath)
+	# in_dirpath = os.path.join(io_dirpaths['results_data'], rel_dirpath)
+	in_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['results_data'], rel_dirpath)
 
 	# Init dict that will store the data
 	results_dict = {}

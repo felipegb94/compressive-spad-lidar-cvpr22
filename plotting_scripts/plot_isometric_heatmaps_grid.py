@@ -40,8 +40,8 @@ if __name__=='__main__':
 	absmax_lognphotons = 4
 	base_dirpath = io_dirpaths['results_data']
 	rel_dirpath = 'final_coding_gauss_mu_est/ntbins-{}_logsbr-{:.1f}-{:.1f}_lognp-{:.1f}-{:.1f}'.format(n_tbins, absmin_logsbr, absmax_logsbr, absmin_lognphotons, absmax_lognphotons)
-	data_dirpath = os.path.join(base_dirpath, rel_dirpath)
-	out_dirpath = os.path.join(io_dirpaths['paper_results_dirpath'], 'IsometricHeatmaps')
+	data_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], base_dirpath, rel_dirpath)
+	out_dirpath = os.path.join(io_dirpaths['data_base_dirpath'], io_dirpaths['paper_results_dirpath'], 'IsometricHeatmaps')
 	## Set parameter
 	metric_id = 'mae' #options: mae, medae, 1tol
 	n_codes = 8

@@ -1,12 +1,5 @@
 {
-    "paper_results_dirpath_tmp": "../../results/raw_figures"
-    , "paper_results_dirpath": "../../results/raw_figures_tmp"
-    , "flim_results_dirpath": "../../results/20210715_flim_ncc_decoding"
-    , "lres_transient_images_dirpath": "../../../data/synthetic_data_min/data_no-conductors_no-dielectric_automatic/transient_images_120x160_nt-200"
-    , "lres_rgb_images_dirpath": "../../../data/synthetic_data_min/data_no-conductors_no-dielectric_automatic/rgb_images_120x160_nt-200"
-    , "lres_depth_images_dirpath": "../../../data/synthetic_data_min/data_no-conductors_no-dielectric_automatic/depth_images_120x160_nt-200"
-
-    , "data_base_dirpath": "./data"
+    "data_base_dirpath": "./data"
     , "data_rel_dirpath": "cvpr22_data"
     , "transient_images_dirpath": "cvpr22_data/rendered_images/transient_images_240x320_nt-2000"
     , "rgb_images_dirpath": "cvpr22_data/rendered_images/rgb_images_240x320_nt-2000"
@@ -15,4 +8,5 @@
     , "results_data_for_paper": "results_data"
     , "results_data": "results_data"
     , "results_dirpath": "results"
+    , "paper_results_dirpath": "results/raw_figures"
 }
