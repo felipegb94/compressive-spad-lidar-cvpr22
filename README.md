@@ -9,6 +9,7 @@ Code and Data for our CVPR 2022 paper *Compressive Single-Photon 3D Cameras*.
     - [Step 3. Download the data](#step-3-download-the-data)
   - [Reproducing Flash LiDAR Results](#reproducing-flash-lidar-results)
   - [Reproducing Scan Data Results with the Real-world captured Data](#reproducing-scan-data-results-with-the-real-world-captured-data)
+  - [Reproducing Simulated Isometric Compression Results and Mean Absolute Error Results](#reproducing-simulated-isometric-compression-results-and-mean-absolute-error-results)
   - [Coding Schemes Evaluated In CVPR 2022 Paper](#coding-schemes-evaluated-in-cvpr-2022-paper)
   - [Visualization Scripts](#visualization-scripts)
   - [Notes on Naming Convention](#notes-on-naming-convention)
@@ -69,6 +70,14 @@ To perform individual flash illumination simulations you can run the `eval_codin
 
 You can run the `scan_data_scripts/process_hist_img.py` script. Please refer to that file for a description of what the script is doing.
 
+## Reproducing Simulated Isometric Compression Results and Mean Absolute Error Results
+
+You can run the `eval_coding_gauss_mu_batch.sh` script. In the script you can modify the range of `sbr`, `nphotons` (photon counts) levels. Also for each coding scheme you can vary the `K` values that are used, to use in the simulation. You can also comment in and out the blocks of code that will simulate different coding schemes. The results will be saved under `results/results_data/final_coding_gauss_mu_est`. 
+
+The batch script simply runs `eval_coding_gauss_mu_est.py` over and over again with different hyper parameter configurations.
+
+**NOTE:** Running all coding schemes for many different `K` values might take a few hours (maybe a 1-2 days even). In particular, TimestampCoding is very slow and takes a while to complete.
+
 ## Coding Schemes Evaluated In CVPR 2022 Paper
 
 The implementation of the coding schemes used in the paper are implemented as individual classes and can be found under `tof-lib/toflib/coding.py`. 
@@ -80,6 +89,7 @@ The following classes have a one-to-one correspondence to the coding schemes des
 3. `PSeriesFourierCoding`: This class corresponds to **Gray-based Fourier** coding scheme. This coding scheme samples frequencies from the Fourier matrix by doubling the frequency that is sampled. Once it cannot double the frequency anymore, it reverts back to `TruncatedFourierCoding` and samples the remaining frequencies from lowest to highest
 4. `GrayCoding`: This class corresponds to **Continuous Gray** coding scheme. This coding scheme is exactly the same as Gray coding when `K == log2(N)`. For all other `K` values the Gray codes are linearly interpolated. Note that this scheme is only valid for `K <= log2(N)`. For a coding scheme that uses approximately binary codes and supports `K > log2(N)`, see `PSeriesGray` below. 
 5. `IdentityCoding`: This class corresponds to **Full-resolution Histograms** where no compression is applied.
+6. `TimestampCoding`: This class corresponds to **Timestamp Transfer** approach. This is not necessarily a coding scheme. This approach simply truncated the number of timestamps used to generate the histograms
 
 Furthermore, the following classes have a ont-to-one correspondence with the coding schemes described in the supplementary document:
 
