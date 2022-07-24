@@ -1,3 +1,15 @@
+#####
+
+# paper data folder
+./data/cvpr22_data
+./data/cvpr22_data/
+
+
+
+
+
+
+######
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

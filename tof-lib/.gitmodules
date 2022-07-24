@@ -1,0 +1,3 @@
+[submodule "research_utils"]
+	path = research_utils
+	url = git@github.com:felipegb94/research_utils.git
