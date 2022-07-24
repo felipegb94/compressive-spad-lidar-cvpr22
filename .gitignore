@@ -2,6 +2,8 @@
 
 # paper data folder
 data/cvpr22_data/
+data/results/
+data/results_data/
 
 
 ######
