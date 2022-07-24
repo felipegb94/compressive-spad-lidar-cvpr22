@@ -96,7 +96,7 @@ plt.title(fname, fontsize=16)
 # # plot_utils.remove_yticks()
 # plot_utils.set_cbar(img)
 # plot_utils.save_currfig_png(out_dirpath, fname)
-plt.title(fname, fontsize=16)
+# plt.title(fname, fontsize=16)
 
 # ## haar coding
 # c = coding.HaarCoding(n, n_lvls=8)
@@ -106,15 +106,7 @@ plt.title(fname, fontsize=16)
 # # plot_utils.remove_yticks()
 # plot_utils.set_cbar(img)
 # plot_utils.save_currfig_png(out_dirpath, fname)
-plt.title(fname, fontsize=16)
+# plt.title(fname, fontsize=16)
 
 
-## optimized codes coding
-opt_codes = np.load('opt_codes_data/opt_C_loss-l1_ncodes-8_ntbins-1024_signal-0-2_sbr--1-1.npy')
-c = coding.DataCoding(C=opt_codes, n_maxres=n)
-fname = 'optC_n-1024_k-8_n-{}'.format(n)
-np.save(os.path.join(out_dirpath, fname), c.C)
-plt.figure()
-plot_c_matrix(c)
-plot_utils.save_currfig_png(out_dirpath, fname)
-plt.title(fname, fontsize=16)
+

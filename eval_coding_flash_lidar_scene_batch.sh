@@ -8,7 +8,7 @@ scene_id=kitchen-2 # Options: kitchen-2, bathroom-cycles-2
 n_tbins=2000
 n_rows=240
 n_cols=320
-pw_factor_shared=1
+pw_factor_shared=1 # pulse width in units of time bins
 # Set noise levels
 sbr=1
 nphotons=2000
@@ -41,22 +41,6 @@ for (( i=0; i<$n_simulations; i++ )); do
     python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR 
 done
 
-# ############# HighFreqFourier Coding #############
-# coding_id='HighFreqFourier'
-# pw_factor=$pw_factor_shared
-# rec_algo_id='ncc'
-# SHARED_CODING_PARAM_STR=' -coding '$coding_id' -pw_factors '$pw_factor' -rec '$rec_algo_id
-# CURR_CODING_PARAM_STR=''
-# n_simulations=${#n_codes[@]}
-# start_high_freq=40
-# ## Use bash for loop 
-# for (( i=0; i<$n_simulations; i++ )); do
-#     n_high_freqs=$((n_codes[$i] / 2))
-#     CURR_CODING_PARAM_STR=' -n_high_freqs '${n_high_freqs}' -start_high_freq '${start_high_freq}
-#     echo python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR
-#     python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR 
-# done
-
 # ############# PSeriesFourier Coding #############
 # coding_id='PSeriesFourier'
 # pw_factor=$pw_factor_shared
@@ -72,7 +56,7 @@ done
 #     python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR 
 # done
 
-# ############# PSeriesGray Coding #############
+# ############# PSeriesGray Coding -- Similar to GrayCoding when K <= log2(N)#############
 # coding_id='PSeriesGray'
 # pw_factor=$pw_factor_shared
 # rec_algo_id='ncc'
@@ -120,8 +104,6 @@ done
 #     python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR 
 # done
 
-
-
 # ############# Identity Coding (Matched Filter Rec) #############
 # coding_id='Identity'
 # pw_factor=$pw_factor_shared
@@ -130,7 +112,6 @@ done
 # CURR_CODING_PARAM_STR=''
 
 # python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR 
-
 
 # ############# Random Coding #############
 # coding_id='Random'
@@ -142,6 +123,22 @@ done
 # ## Use bash for loop 
 # for (( i=0; i<$n_simulations; i++ )); do
 #     CURR_CODING_PARAM_STR=' -n_random_codes '${n_codes[$i]}
+#     echo python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR
+#     python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR 
+# done
+
+# ############# HighFreqFourier Coding #############
+# coding_id='HighFreqFourier'
+# pw_factor=$pw_factor_shared
+# rec_algo_id='ncc'
+# SHARED_CODING_PARAM_STR=' -coding '$coding_id' -pw_factors '$pw_factor' -rec '$rec_algo_id
+# CURR_CODING_PARAM_STR=''
+# n_simulations=${#n_codes[@]}
+# start_high_freq=40
+# ## Use bash for loop 
+# for (( i=0; i<$n_simulations; i++ )); do
+#     n_high_freqs=$((n_codes[$i] / 2))
+#     CURR_CODING_PARAM_STR=' -n_high_freqs '${n_high_freqs}' -start_high_freq '${start_high_freq}
 #     echo python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR
 #     python eval_coding_flash_lidar_scene.py $SHARED_PARAM_STR $SHARED_CODING_PARAM_STR $CURR_CODING_PARAM_STR 
 # done
