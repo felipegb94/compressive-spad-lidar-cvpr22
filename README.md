@@ -74,11 +74,12 @@ You can run the `scan_data_scripts/process_hist_img.py` script. Please refer to 
 
 ## Reproducing Simulated Isometric Compression Results and Mean Absolute Error Results
 
+**NOTE:** Running all coding schemes for many different `K` values might take hours to days. In particular, `TimestampCoding` is very slow and takes a while to complete.
+
 You can run the `eval_coding_gauss_mu_batch.sh` script. In the script you can modify the range of `sbr`, `nphotons` (photon counts) levels. Also for each coding scheme you can vary the `K` values that are used, to use in the simulation. You can also comment in and out the blocks of code that will simulate different coding schemes. The results will be saved under `results/results_data/final_coding_gauss_mu_est`. 
 
 The batch script simply runs `eval_coding_gauss_mu_est.py` over and over again with different hyper parameter configurations.
 
-**NOTE:** Running all coding schemes for many different `K` values might take a few hours (maybe a 1-2 days even). In particular, TimestampCoding is very slow and takes a while to complete.
 
 ## Coding Schemes Evaluated In CVPR 2022 Paper
 
