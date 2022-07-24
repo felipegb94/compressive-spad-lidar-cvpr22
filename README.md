@@ -2,6 +2,8 @@
 
 Code and Data for our CVPR 2022 paper *Compressive Single-Photon 3D Cameras*.
 
+Project Page: https://pages.cs.wisc.edu/~felipe/project-pages/2022-compressive-histograms/
+
 - [compressive-spad-lidar-cvpr22](#compressive-spad-lidar-cvpr22)
   - [Getting Started](#getting-started)
     - [Step 1. Setup Python environment](#step-1-setup-python-environment)
