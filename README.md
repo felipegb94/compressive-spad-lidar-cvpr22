@@ -8,6 +8,7 @@ Code and Data for our CVPR 2022 paper *Compressive Single-Photon 3D Cameras*.
     - [Step 2. Setup data paths](#step-2-setup-data-paths)
     - [Step 3. Download the data](#step-3-download-the-data)
   - [Reproducing Flash LiDAR Results](#reproducing-flash-lidar-results)
+  - [Reproducing Scan Data Results with the Real-world captured Data](#reproducing-scan-data-results-with-the-real-world-captured-data)
   - [Coding Schemes Evaluated In CVPR 2022 Paper](#coding-schemes-evaluated-in-cvpr-2022-paper)
   - [Visualization Scripts](#visualization-scripts)
   - [Notes on Naming Convention](#notes-on-naming-convention)
@@ -32,7 +33,7 @@ Create the conda envirionment (`csphenv`) from the `environment.yml`:
 
 Open `io_dirpaths.json` and set the dirpaths where you want data to be downloaded, results, and data to be saved.
 
-We recommend leaving the default values, which will store everything under the `./data` folder.
+**Note:** We recommend leaving the default values, which will store everything under the `./data` folder.
 
 The main dirpath that can be set (or left as default) is
 
@@ -63,6 +64,10 @@ The data will be download inside the `./data` folder. If you want to change the 
 You can run the `eval_coding_flash_lidar_scene_batch.sh` script. In the script you can modify the desired `sbr`, `nphotons` (photon counts), `K`, to use in the simulation. You can also comment in and out the blocks of code that will simulate different coding schemes. The results will be saved under `results/results_data/eval_coding_flash_lidar`. Running the script for all coding schemes may take a few minutes.
 
 To perform individual flash illumination simulations you can run the `eval_coding_flash_lidar_scene.py` script with the specified parameters. Some sample run commands are at the top of the scipt.
+
+## Reproducing Scan Data Results with the Real-world captured Data
+
+You can run the `scan_data_scripts/process_hist_img.py` script. Please refer to that file for a description of what the script is doing.
 
 ## Coding Schemes Evaluated In CVPR 2022 Paper
 
