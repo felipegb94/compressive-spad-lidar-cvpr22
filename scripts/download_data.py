@@ -32,7 +32,9 @@ if __name__=='__main__':
     dataset_dir = data_base_dir
 
     ## Get the url 
-    gdrive_dataset_folder_url = "https://drive.google.com/drive/folders/1vJsZxGgXxh1s-wLIpSIcFg0hPx8pDJea"
-
+    # gdrive_dataset_folder_url = "https://drive.google.com/drive/folders/1vJsZxGgXxh1s-wLIpSIcFg0hPx8pDJea"
+    gdrive_dataset_folder_url = "https://drive.google.com/drive/folders/1afCoNUpSS1VjGQVh-GhPTQHtOD0LoAMq"
+    
+    
     zip_fpaths = gdown.download_folder(url=gdrive_dataset_folder_url, output=dataset_dir, quiet=False)
 
