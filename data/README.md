@@ -1,5 +1,7 @@
 # Data
 
+This is where the downloaded data and results will be stored by default.
+
 To download the data please run `scripts/download_data.py` from the top-level folder:
 
 ```
