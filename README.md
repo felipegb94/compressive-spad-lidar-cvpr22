@@ -79,6 +79,7 @@ The following classes have a one-to-one correspondence to the coding schemes des
 Furthermore, the following classes have a ont-to-one correspondence with the coding schemes described in the supplementary document:
 
 1. `PSeriesGrayCoding`: This class corresponds to **Fourier-based Gray** coding scheme. This coding scheme is similar to `PSeriesFourierCoding` but uses binarized codes. When `K <= log2(N)`, this coding scheme is the same as `Gray`
+2. `GatedFourier-F-1`: This class corresponds to **short-time fourier** coding scheme. This coding scheme first defines a `GatedCoding`, and then for each gate it defines a fixed number of frequencies to be sampled within that gate. See `coding.py:GatedFourierCoding` for implementation details.
 
 ## Visualization Scripts
 

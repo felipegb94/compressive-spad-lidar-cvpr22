@@ -1,0 +1,56 @@
+{
+    "laser_rep_freq": 10e6,
+    "dead_time": 50e3, 
+    "min_tbin_size": 8,
+    "scan_data_base_dirpath": "cvpr22_data/scan_data",
+    "scene_ids": [
+        "20190209_deer_high_mu/free"
+        , "20190209_deer_high_mu/ext"
+        , "20190209_deer_high_mu/ext_5%"
+        , "20190208_deer/free"
+        , "20190208_deer/ext"
+        , "20190207_face_scanning_low_mu/free"
+        , "20190207_face_scanning_low_mu/ground_truth"
+        , "20190207_face_scanning_low_mu/ext_opt_filtering"
+        , "20190207_face_scanning_low_mu/ext_opt_filtering"
+        , "20190207_face_scanning_low_mu/ext_5%"
+        , "20190116_face_scanning_high_mu_no_ambient"
+        , "20180922_face_no_ambient_highmu"
+        , "20181108_darkvase"
+        , "20181112_blocks/extreme_flux"
+        , "20181112_blocks/high_flux"
+        , "20181112_blocks/med_flux"
+        , "20181112_blocks/low_flux"
+    ],
+    "irf_scene_id": "20190207_face_scanning_low_mu/ground_truth",
+    "hist_preprocessing_params": {
+        "hist_start_time": 37000
+        , "hist_end_time": 44504
+        , "hist_shift_time": 800
+    },
+    "irf_params": {
+        "pulse_len": 850 
+        , "second_pulse_offset": 1100
+    },
+    "scene_params": {
+        "20190207_face_scanning_low_mu/free": {
+            "n_rows_fullres": 204, 
+            "n_cols_fullres": 116
+            , "pulse_len": 480 
+            , "second_pulse_offset": 1100
+            },
+        "20190207_face_scanning_low_mu/ground_truth": {
+            "n_rows_fullres": 204, 
+            "n_cols_fullres": 116
+            , "pulse_len": 850 
+            , "second_pulse_offset": 1100
+        },
+        "20190209_deer_high_mu/free": {
+            "n_rows_fullres": 174, 
+            "n_cols_fullres": 154
+            , "pulse_len": 480 
+            , "second_pulse_offset": 1100
+        } 
+    },
+    "fov_major_axis": 40
+}

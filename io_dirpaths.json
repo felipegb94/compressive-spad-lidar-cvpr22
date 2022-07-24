@@ -9,4 +9,5 @@
     , "results_data": "results_data"
     , "results_dirpath": "results"
     , "paper_results_dirpath": "results/raw_figures"
+    , "scan_data_base_dirpath": "cvpr22_data/scan_data"
 }
