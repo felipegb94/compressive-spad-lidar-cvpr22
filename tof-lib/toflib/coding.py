@@ -284,7 +284,7 @@ class DataCoding(Coding):
 
 class GatedCoding(Coding):
 	'''
-		Gated coding class. Coding is applied like a gated camera 
+		Gated coding class. Coding is applied like a gated camera or a coarse histogram in SPADs
 		In the extreme case that we have a gate for every time bin then the C matrix is an (n_maxres x n_maxres) identity matrix
 	'''
 	def __init__(self, n_maxres, n_gates=None, **kwargs):
