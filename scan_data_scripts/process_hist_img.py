@@ -1,7 +1,33 @@
+'''
+Description:
+	This script will generate the estimated depths for the real-world experimental data results.
+	This script:
+
+	1. Loads the pre-processed experimental histogram data, which should have been downloaded and stored under `cvpr22_data/scan_data`
+	2. Creates different coding scheme objects with which the data is going to be processed with
+	3. Computes depths, point clouds, and depth errors for all coding schemes
+		3.1 Depth errors are computed with respect to the method that uses the full-resolution histogram and uses a matched filter to compute depths.
+	4. Saves the results depths, xyz, errors, etc in data files under `results_data/scan_data_results`
+
+Parameters:
+
+	If you want to change the scene edit the `scene_name` variable in this file. 
+
+	If you want to change the number of coding functions used to generate the results change the `n_codes` variable. Note that some implemenations only work if `N` is divisible by `n_codes` (i.e., K).
+
+To run : 
+	`python scan_data_scripts/process_hist_img.py`
+
+	Make sure to run from top-level folder
+
+'''
+
 #### Standard Library Imports
 import os
 import sys
 sys.path.append('./tof-lib')
+sys.path.append('.')
+sys.path.append('..')
 
 #### Library imports
 import numpy as np
@@ -205,9 +231,9 @@ if __name__=='__main__':
 
 	## Set CSPH params
 	account_irf = True
-	# Codes for 1144: 8, 22, 26, 44, 52, 88, 104
-	# Codes for 832: 8, 16, 32, 52, 64, 104
-	n_codes = 8
+	# Codes for N=1144: 8, 22, 26, 44, 52, 88, 104
+	# Codes for N=832: 8, 16, 32, 52, 64, 104
+	n_codes = 32
 	out_fname_base = 'ncodes-{}_accountirf-{}'.format(n_codes, account_irf)
 
 	(coding_id, rec_algo_id) = ('Gated', 'linear')
@@ -308,3 +334,6 @@ if __name__=='__main__':
 	out_fname = '{}_tres-{}ps_tlen-{}ps_globalshift-{}'.format(scene_id.replace('/','--'), int(irf_tres), int(hist_img_tau), global_shift)
 	plt.pause(0.1)
 	save_currfig_png(os.path.join(results_dirpath, 'globalshift'), out_fname)
+
+
+	plt.show()
