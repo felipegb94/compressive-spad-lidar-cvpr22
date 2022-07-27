@@ -121,7 +121,7 @@ The scripts that plot the result figures require running the scan data script, f
 
 #### Parameters
 
-* `K`: Number of rows (coding functions) in coding matrix
+* `K` or `n_codes`: Number of rows (coding functions) in coding matrix
 * `nt` or `n_tbins`: Number of time bins in uncompressed histogram
 * `nr` or `n_rows`: Number of rows
 * `nc` or `n_cols`: Number of cols
